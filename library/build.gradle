@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.TR4Android'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'com.android.support:support-v4:25.1.0'
+    api 'com.android.support:support-annotations:25.1.0'
+    api 'com.android.support:recyclerview-v7:25.1.0'
+    api 'com.nineoldandroids:library:2.4.0'
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.1'
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+}
+
+//apply from: '../maven_push.gradle'

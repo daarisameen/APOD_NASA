@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="category_general"
+        android:title="@string/pref_general">
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/list_image_quality"
+            android:entryValues="@array/list_values"
+            android:key="image_quality"
+            android:summary="@string/pref_summary_image_quality"
+            android:title="@string/pref_image_quality"/>
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_display_credit"
+            android:summary="@string/pref_summary_image_credits"
+            android:title="@string/pref_image_credits"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_storage"
+        android:title="@string/pref_storage">
+        <EditTextPreference
+            android:defaultValue="/sdcard/APOD/"
+            android:key="pref_save_location"
+            android:title="@string/pref_save_location"/>
+
+        <Preference
+            android:key="pref_clear_cache"
+            android:summary="@string/pref_summary_cache"
+            android:title="@string/pref_cache"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_about"
+        android:title="@string/pref_about">
+        <PreferenceScreen
+            android:key="open_source"
+            android:summary="@string/pref_summary_credits"
+            android:title="@string/title_activity_credits">
+            <intent
+                android:targetClass="ca.jeffrey.apodgallery.CreditsActivity"
+                android:targetPackage="ca.jeffrey.apodgallery"/>
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="developer"
+            android:summary="@string/name_developer"
+            android:title="@string/pref_developer">
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="mailto:jeffreyca16@gmail.com">
+                <extra android:name="android.intent.extra.SUBJECT"
+                       android:value="APOD Gallery: " />
+            </intent>
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="pref_version"
+            android:title="@string/pref_version">
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>
